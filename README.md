@@ -4,7 +4,7 @@ This repository contains the deliverables, code, and documentation for **Questio
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 1. [Repository Structure & Navigation](#-repository-structure--navigation)
 2. [Environment Setup & Installation](#-environment-setup--installation)
 3. [Question 1: Technical Debt Diagnosis](#-question-1-technical-debt-diagnosis)
@@ -15,7 +15,7 @@ This repository contains the deliverables, code, and documentation for **Questio
 
 ---
 
-## 📂 Repository Structure & Navigation
+##  Repository Structure & Navigation
 
 | Deliverable / Question | File / Path | Description |
 | :--- | :--- | :--- |
@@ -30,7 +30,7 @@ This repository contains the deliverables, code, and documentation for **Questio
 
 ---
 
-## 🛠️ Environment Setup & Installation
+##  Environment Setup & Installation
 
 ### 1. Prerequisites
 - Python 3.9+
@@ -60,7 +60,7 @@ pip install mlflow scikit-learn pandas numpy "dvc[s3]"
 
 ---
 
-## 📝 Question 1: Technical Debt Diagnosis
+##  Question 1: Technical Debt Diagnosis
 
 - **File Location:** Included in [`report.pdf`](./report.pdf) (Question 1)
 - **Topics Covered:**
@@ -71,7 +71,7 @@ pip install mlflow scikit-learn pandas numpy "dvc[s3]"
 
 ---
 
-## 📊 Question 2: Applied MLflow Experiment Comparison
+##  Question 2: Applied MLflow Experiment Comparison
 
 - **Directory:** [`question_2/`](./question_2/)
 - **Summary:**
@@ -97,7 +97,7 @@ Open `http://localhost:5000` in your web browser to interact with the run compar
 
 ---
 
-## 🗄️ Question 3: Applied DVC Data Versioning & Rollback
+##  Question 3: Applied DVC Data Versioning & Rollback
 
 - **Directory:** [`question_3/`](./question_3/)
 - **Summary:**
@@ -139,7 +139,7 @@ dvc checkout
 
 ---
 
-## 🤝 Question 4: Capstone — End-to-End Reproducibility Drill
+##  Question 4: Capstone — End-to-End Reproducibility Drill
 
 The complete implementation and collaborative reproducibility protocol for Question 4 is hosted in a dedicated repository:
 
@@ -162,7 +162,7 @@ The complete implementation and collaborative reproducibility protocol for Quest
 
 ---
 
-## 🤖 AI Disclosure & Code of Conduct
+##  AI Disclosure & Code of Conduct
 
 In accordance with the **Code of Conduct for Fair and Responsible Use of AI in AIOps Coursework**, all AI assistance utilized across this assignment is disclosed below:
 
