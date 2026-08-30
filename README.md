@@ -1,50 +1,36 @@
 # AIOps — Module 1 Assignment: Experiment Management & Reproducibility
 
-
-This repository contains the deliverables, code, and documentation for **Question 1** (Conceptual: Technical Debt Diagnosis), **Question 2** (Applied: MLflow Experiment Comparison), and **Question 3** (Applied: DVC Data Versioning & Rollback).
-
-
-
-## Table of Contents
-1. [AI Disclosure & Code of Conduct](#-ai-disclosure--code-of-conduct)
-2. [Repository Structure & Navigation](#-repository-structure--navigation)
-3. [Environment Setup & Installation](#-environment-setup--installation)
-4. [Question 1: Technical Debt Diagnosis](#-question-1-technical-debt-diagnosis)
-5. [Question 2: Applied MLflow Experiment Comparison](#-question-2-applied-mlflow-experiment-comparison)
-6. [Question 3: Applied DVC Data Versioning & Rollback](#-question-3-applied-dvc-data-versioning--rollback)
-7. [Question 4: Capstone Drill (Status)](#-question-4-capstone-drill-status)
+This repository contains the deliverables, code, and documentation for **Question 1** (Conceptual: Technical Debt Diagnosis), **Question 2** (Applied: MLflow Experiment Comparison), **Question 3** (Applied: DVC Data Versioning & Rollback), and links to the dedicated repository for **Question 4** (Capstone: End-to-End Reproducibility Drill).
 
 ---
 
-##  AI Disclosure & Code of Conduct
-
-In accordance with the **Code of Conduct for Fair and Responsible Use of AI in AIOps Coursework**, all AI assistance utilized in this repository is disclosed below:
-
-- **AI Tools Used:** Claude
-- **Usage Details:**
-  - **Question 2:** Used Claude to clarify which hyperparameters are relevant for scikit-learn's `MLPClassifier` (e.g., `hidden_layer_sizes`, `learning_rate_init`, `batch_size`, `max_iter`, `solver`, `activation`) and to verify syntax for MLflow logging calls (`mlflow.log_param` and `mlflow.log_metric`).
-  - **Question 3:** Used Claude for step-by-step guidance on creating an AWS S3 bucket and configuring/authenticating it as a remote storage backend for DVC (`dvc remote add -d myremote s3://...`).
-- **Impact on Final Submission:** The AI served as a syntax reference and pair-programming assistant to streamline standard boilerplate and CLI configuration. All model training, experiment logging, data versioning commits, and rollbacks were executed directly and verified manually.
-
+## 📋 Table of Contents
+1. [Repository Structure & Navigation](#-repository-structure--navigation)
+2. [Environment Setup & Installation](#-environment-setup--installation)
+3. [Question 1: Technical Debt Diagnosis](#-question-1-technical-debt-diagnosis)
+4. [Question 2: Applied MLflow Experiment Comparison](#-question-2-applied-mlflow-experiment-comparison)
+5. [Question 3: Applied DVC Data Versioning & Rollback](#-question-3-applied-dvc-data-versioning--rollback)
+6. [Question 4: Capstone — End-to-End Reproducibility Drill](#-question-4-capstone--end-to-end-reproducibility-drill)
+7. [AI Disclosure & Code of Conduct](#-ai-disclosure--code-of-conduct)
 
 ---
 
-##  Repository Structure & Navigation
+## 📂 Repository Structure & Navigation
 
 | Deliverable / Question | File / Path | Description |
 | :--- | :--- | :--- |
-| **Q1: Technical Debt Diagnosis** | [`question_1.pdf`](./question_1.pdf) | 1-page write-up diagnosing 3 technical debt scenarios and proposing specific mitigations. |
+| **Q1 & Q2: Written Report** | [`report.pdf`](./report.pdf) | 1-page write-up covering Q1 Technical Debt Diagnosis and Q2 MLflow Experiment Analysis. |
 | **Q2: MLflow Run Comparison Table** | [`question_2/mlflow_comparison_table.png`](./question_2/mlflow_comparison_table.png) | Screenshot of the MLflow UI comparison table displaying all 6 MLP runs on MNIST. |
-| **Q2: Written Analysis** | [`question_2/written_analysis_Q2.pdf`](./question_2/written_analysis_Q2.pdf) | Short written analysis (150–250 words) evaluating best runs, overfitting, and hyperparameter impact. |
 | **Q2: MLflow Logging Code** | [`question_2/log_param_metric_code.py`](./question_2/log_param_metric_code.py) | Python snippet containing exact `mlflow.log_param` and `mlflow.log_metric` statements. |
 | **Q3: DVC Tracking Files** | [`question_3/file_list.csv.dvc`](./question_3/file_list.csv.dvc), [`question_3/data.dvc`](./question_3/data.dvc) | DVC metadata tracking dataset versions. |
 | **Q3: Dataset File List** | [`question_3/file_list.csv`](./question_3/file_list.csv) | Tracked dataset CSV containing file records (v1 = 1801 lines, v2 = 2801 lines). |
 | **Q3: Rollback Proof** | [`question_3/rollback_ss.png`](./question_3/rollback_ss.png) | Terminal screenshot/output demonstrating rollback to v1 via `git checkout` + `dvc checkout` and row count validation. |
+| **Q4: Capstone Drill Repository** | [reproducibility_capstone](https://github.com/Shruthi276/reproducibility_capstone) | Dedicated  repository containing the full end-to-end reproducibility protocol. |
 | **DVC Configuration** | [`.dvc/config`](./.dvc/config) | Remote storage configuration pointing to S3. |
 
 ---
 
-##  Environment Setup & Installation
+## 🛠️ Environment Setup & Installation
 
 ### 1. Prerequisites
 - Python 3.9+
@@ -74,9 +60,9 @@ pip install mlflow scikit-learn pandas numpy "dvc[s3]"
 
 ---
 
-##  Question 1: Technical Debt Diagnosis
+## 📝 Question 1: Technical Debt Diagnosis
 
-- **File Location:** [`question_1.pdf`](./question_1.pdf)
+- **File Location:** Included in [`report.pdf`](./report.pdf) (Question 1)
 - **Topics Covered:**
   - **Scenario (a):** Hidden feedback loop / undeclared upstream feature dependencies impacting the "favorite restaurants" model when "estimated delivery time" rounding logic changed.
   - **Scenario (b):** Hidden consumer / data debt (marketing dashboard silently reading raw model output table without a formalized data contract or API boundary).
@@ -85,7 +71,7 @@ pip install mlflow scikit-learn pandas numpy "dvc[s3]"
 
 ---
 
-##  Question 2: Applied MLflow Experiment Comparison
+## 📊 Question 2: Applied MLflow Experiment Comparison
 
 - **Directory:** [`question_2/`](./question_2/)
 - **Summary:**
@@ -100,7 +86,7 @@ pip install mlflow scikit-learn pandas numpy "dvc[s3]"
   - Metrics: `train_loss`, `val_loss`, `val_accuracy`, `val_f1_macro`
 - **Source Code Snippet:** View [`question_2/log_param_metric_code.py`](./question_2/log_param_metric_code.py)
 - **Comparison Table:** View [`question_2/mlflow_comparison_table.png`](./question_2/mlflow_comparison_table.png)
-- **Written Analysis:** View [`question_2/written_analysis_Q2.pdf`](./question_2/written_analysis_Q2.pdf)
+- **Written Analysis:** Included in [`report.pdf`](./report.pdf) (Question 2: Written Analysis)
 
 ### How to Launch the MLflow Tracking Server
 To view the experiment runs and compare results via the MLflow UI, start the tracking server using:
@@ -111,7 +97,7 @@ Open `http://localhost:5000` in your web browser to interact with the run compar
 
 ---
 
-## Question 3: Applied DVC Data Versioning & Rollback
+## 🗄️ Question 3: Applied DVC Data Versioning & Rollback
 
 - **Directory:** [`question_3/`](./question_3/)
 - **Summary:**
@@ -153,7 +139,36 @@ dvc checkout
 
 ---
 
-##  Question 4: Capstone Drill (Status)
+## 🤝 Question 4: Capstone — End-to-End Reproducibility Drill
 
-> [!NOTE]
-> **Question 4 (End-to-End Reproducibility Protocol & Partner Drill)** will be added and documented in this section upon completion of the collaborative experiment with the assigned partner.
+The complete implementation and collaborative reproducibility protocol for Question 4 is hosted in a dedicated repository:
+
+🔗 **GitHub Repository:** [https://github.com/Shruthi276/reproducibility_capstone](https://github.com/Shruthi276/reproducibility_capstone)
+
+### Protocol Overview & Role (Partner A):
+1. **Model Training & MLflow Logging:** Trained the model, logged all parameters, metrics, random seed, `git_commit` tag, and artifacts to MLflow.
+2. **Data Versioning:** Versioned the dataset using DVC and committed code changes and `.dvc` metadata files atomically in the same Git commit.
+3. **Model Registry:** Registered the trained model in the MLflow Model Registry and transitioned the model stage to **"Staging"**.
+4. **Partner Handoff & Independent Reproduction:** Provided the repository to Partner B to reproduce the complete pipeline independently using only:
+   ```bash
+   git clone https://github.com/Shruthi276/reproducibility_capstone.git
+   git checkout <commit>
+   dvc checkout
+   # Environment activation & script re-run
+   ```
+5. **Verification & Metric Matching:** Partner B verified reproduced metrics against logged results within stated tolerance and documented notes directly in the MLflow run.
+
+*For complete reproduction instructions, commit history, and logs, please visit the [reproducibility_capstone](https://github.com/Shruthi276/reproducibility_capstone) repository.*
+
+---
+
+## 🤖 AI Disclosure & Code of Conduct
+
+In accordance with the **Code of Conduct for Fair and Responsible Use of AI in AIOps Coursework**, all AI assistance utilized across this assignment is disclosed below:
+
+- **AI Tools Used:** Claude
+- **Usage Details:**
+  - **Question 2:** Used Claude to clarify which hyperparameters are relevant for scikit-learn's `MLPClassifier` (e.g., `hidden_layer_sizes`, `learning_rate_init`, `batch_size`, `max_iter`, `solver`, `activation`) and to verify syntax for MLflow logging calls (`mlflow.log_param` and `mlflow.log_metric`).
+  - **Question 3:** Used Claude for steps for  creating an AWS S3 bucket and configuring/authenticating it as a remote storage backend for DVC (`dvc remote add -d myremote s3://...`).
+  - **Question 4 (Capstone):** i was Partner A and used Claude to set up the boilerplate project file structure for the  repository, as well as for troubleshoot and fix errors encountered during the  reproduction workflow.
+- **Impact on Final Submission:** The AI was utilized strictly as a learning assistant, boilerplate generator, and debugging tool. All model training runs, metric evaluations, DVC remote pushes, Git tagging, and reproduction drills were independently executed, validated, and verified.
